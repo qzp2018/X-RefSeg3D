@@ -108,7 +108,7 @@ backbone_model = SCN().cuda()
 backbone_model = nn.DataParallel(backbone_model)
 models = {'backbone': backbone_model}
 
-training_epoch = checkpoint_restore(models, 'TGNN/GRU/checkpoints/'+args.exp_name+'/'+'models'+'/'+args.exp_name, io, use_cuda, args.restore_epoch)#加载模型参数
+training_epoch = checkpoint_restore(models, 'TGNN/GRU/checkpoints/'+args.exp_name+'/'+'models'+'/'+args.exp_name, io, use_cuda, args.restore_epoch)
 for m in models:
     models[m].eval()
 
@@ -121,6 +121,6 @@ for i,batch in enumerate(tqdm(data.val_data_loader)):
         batch_val(batch, models, data.batch_size)
 
 #save one stage's feat
-with open('TGNN/val_feat.pkl', 'wb') as f:#TGNN/train_feat.pkl    
+with open('TGNN/val_feat.pkl', 'wb') as f:   
     pickle.dump(save_feat, f)
 
