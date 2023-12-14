@@ -80,12 +80,12 @@ We pre-save the visual features extracted from each scene, resulting in signific
 Train the referring model with GRU encoder. 
 ```
 cd GRU/
-python X-RefSeg_gru.py
+python X-RefSeg3D_gru.py
 ```
 Train the referring model with BERT encoder.
 ```
 cd BERT/
-python X-RefSeg_bert.py
+python X-RefSeg3D_bert.py
 ```
 ## 6. Acknowledgements
 Our dataloader and training implementations are modified from https://github.com/hanhung/TGNN, which is obtained by reference to https://github.com/facebookresearch/SparseConvNet and https://github.com/daveredrum/ScanRefer, please go check out their repositories for sparseconvolution and 3D referring object localization implementations respectively. We would also like to thank the teams behind TGNN, Scannet and ScanRefer for providing their pre-trained models and dataset.
