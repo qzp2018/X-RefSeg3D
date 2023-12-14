@@ -77,6 +77,11 @@ This Repository
 ```
 ## 5. Training and Validation
 We pre-save the visual features extracted from each scene, resulting in significant time savings. Additionally, we concurrently perform both training and validation steps.  
+For example, we pre-save the visual features in GRU mode.
+```
+cd GRU/
+python feat_save.py
+```
 Train the referring model with GRU encoder. 
 ```
 cd GRU/
