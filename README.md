@@ -82,7 +82,7 @@ For example, we pre-save the visual features in GRU mode.
 cd GRU/
 python feat_save.py
 ```
-Then the visual features for validation are saved.  
+Then the visual features for validation are saved as ```val_feat.pkl```.  
 
 Train the referring model with GRU encoder. 
 ```
