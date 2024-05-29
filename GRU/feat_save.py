@@ -17,7 +17,7 @@ import torch.nn.functional as F
 from torch.nn.utils.rnn import pack_padded_sequence
 
 from util import *
-from model import *
+from model_gru import *
 from cluster import *
 import data_val as data
 import pickle
@@ -80,8 +80,8 @@ def batch_val(batch, model, batch_size):
 
         # Clustering for Wall & Floor, here we use mean shift clustering
         grps1 = SampleMSCluster(scene_pcfeat[~m], scene_coords[~m])
-        grp_feat1, _ = gather1(scene_pcfeat[~m], grps1)
-        grp_cen1, _ = gather1(scene_coords[~m], grps1)
+        grp_feat1, _ = gather(scene_pcfeat[~m], grps1)
+        grp_cen1, _ = gather(scene_coords[~m], grps1)
 
         save_feat[name] = {
             'scene_pcfeat':scene_pcfeat.cpu(),
